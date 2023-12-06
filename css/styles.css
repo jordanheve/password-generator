@@ -1,0 +1,270 @@
+@font-face {
+    font-family: "Jet Brains Mono";
+    src: url("../assets/fonts/JetBrainsMono-VariableFont_wght.ttf");
+}
+
+:root{
+    --background: #18171F;
+    --teal: #A4FFAF;
+    --zinc: #E6E5EA;
+    --gray: #817D92;
+    --dark-gray: #24232C;
+    --red: #F64A4A;
+    --orange: #FB7C58;
+    --yellow: #F8CD65;
+}
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Jet Brains Mono";
+}
+
+body {
+    background-color: var(--background);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+    color: var(--zinc);
+    accent-color: var(--teal);
+}
+
+
+.main{
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    justify-content: center;
+    max-width: 30em;
+    width: 100%;
+    
+}
+
+.title {
+    font-size: 1.35em;
+    color: var(--gray);
+    text-align: center;
+}
+
+.container {
+    background-color: var(--dark-gray);
+    display: flex;
+}
+
+.character-length {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.lenght-number{
+    color:var(--teal);
+    font-size: xx-large;
+    font-weight: bold;
+}
+
+.password{
+    padding: 1.5em;
+    display: flex;
+    justify-content: space-between;
+}
+
+.password-txt{
+    font-size: 1.3em;
+}
+
+.placeholder{
+    opacity: .5;
+}
+
+.generator{
+    height: 29em;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    padding: 2rem;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+
+
+.copy-btn {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+
+
+.icon-svg {
+    width: 24px; 
+    height: 24px; 
+    fill: var(--teal);
+    
+}
+
+.icon-svg:hover {
+    fill: var(--zinc);
+}
+
+
+/*********** Baseline, reset styles ***********/
+input[type="range"] {
+    -webkit-appearance: none;
+    appearance: none;
+    cursor: pointer;
+  }
+  
+  /* Removes default focus */
+  input[type="range"]:focus {
+    outline: none;
+  }
+  
+/* Slider track */
+input[type="range"] {
+    /* Estilos generales */
+    width: 100%; /* Ajustar el ancho del control deslizante */
+    height: 8px; /* Altura del track */
+    border-radius: 5px; /* Bordes redondeados */
+    background: var(--background); /* Color del track */
+    outline: none; /* Eliminar contorno por defecto */
+    margin: 10px 0; /* Margen superior e inferior para separar del resto del contenido */
+  }
+  
+  /* Track - parte fuera del rango */
+  input[type="range"]::-webkit-slider-runnable-track {
+    background: var(--teal); /* Color de la parte fuera del rango */
+    height: 8px; /* Altura del track */
+    border-radius: 5px; /* Bordes redondeados */
+  }
+  
+  /* Slider thumb */
+  input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none; /* Quitar estilos nativos del thumb */
+    width: 26px; /* Ancho del thumb */
+    height: 26px; /* Altura del thumb */
+    border-radius: 50%; /* Hacer el thumb circular */
+    background: var(--zinc); /* Color del thumb */
+    border: 2px solid var(--zinc); /* Borde del thumb */
+    cursor: pointer; /* Mostrar cursor apuntando */
+    margin-top: -10px; /* Ajustar verticalmente respecto al track */
+  }
+  
+  /* Slider thumb on hover */
+  input[type="range"]:hover::-webkit-slider-thumb {
+    border-color: var(--teal); /* Color del borde al pasar el mouse */
+    background-color: var(--background); /* Color del thumb al pasar el mouse */
+  }
+  
+  
+  /*********** Firefox styles ***********/
+  /* slider track */
+  input[type="range"]::-moz-range-track {
+    background-color: var(--background);
+    border-radius: 0;
+    height: 8px;
+  }
+  
+  /* slider thumb */
+  input[type="range"]::-moz-range-thumb {
+    background-color: var(--zinc);
+    border-color: var(--zinc) ; 
+    border-width: 2px;
+    border-radius: 50%;
+    height: 26px;
+    width: 26px;
+  }
+  
+  input[type="range"]:hover::-moz-range-thumb{
+    border-color: var(--teal);
+    background-color: var(--background);
+  }
+
+  input[type="range"]::-moz-range-progress {
+    background-color: var(--teal);
+    height: 8px;
+  }
+
+
+
+/* check box*/
+
+input[type="checkbox"] {
+    appearance: none;
+     height: 1.1em;
+     width: 1.1em;
+     background-color: var(--dark-gray);
+     outline: .1em solid var(--zinc);
+    margin-bottom: 1em;
+    }
+
+    input[type="checkbox"]:checked {
+        appearance: none;
+         height: 1.1em;
+         width: 1.1em;
+         background-color: var(--teal);
+         outline: .1em solid var(--teal); 
+        
+    }
+
+    input[type="checkbox"]::before {
+        content: url('../assets/images/icon-check.svg'); 
+        display: inline-block;
+        opacity: 0; 
+        z-index: 1;
+      }
+      
+   
+      input[type="checkbox"]:checked::before {
+        opacity: 1; 
+      }
+
+      .strength {
+        background-color: var(--background);
+        padding: 1em;
+        display: flex;
+        justify-content: space-between;
+      }
+
+      .strength-txt{
+        color:var(--gray);
+        text-transform: uppercase;
+      }
+
+      .bars{
+        display: flex;
+        gap: .3rem;
+      }
+
+      .bars>div{
+        height: 1.55em;
+        width: .55em;
+        border: .05em var(--zinc) solid;
+        background-color: transparent;
+      }
+
+      .submit-btn {
+        height: 3.5em;
+        border-radius: 0;
+        background-color: var(--teal);
+        text-transform: uppercase;
+        font-weight: bold;
+        color: var(--background);
+        border: .1em var(--teal) solid ;
+        cursor: pointer;
+        font-size: large;
+      }
+
+      .submit-btn:hover{
+        background-color: var(--dark-gray);
+        color: var(--zinc);
+      }
