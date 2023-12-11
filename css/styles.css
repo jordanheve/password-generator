@@ -240,6 +240,13 @@ input[type="checkbox"] {
         text-transform: uppercase;
       }
 
+      .strength-lvl {
+        display: flex;
+        gap:1em;
+      }
+
+
+     /*Bars lvl styles*/ 
       .bars{
         display: flex;
         gap: .3rem;
@@ -250,6 +257,26 @@ input[type="checkbox"] {
         width: .55em;
         border: .05em var(--zinc) solid;
         background-color: transparent;
+      }
+
+      .too-weak div:first-child {
+        background-color: var(--red);
+        border-color: var(--red);
+      }
+
+      .weak div:nth-child(-n+2) {
+        background-color: var(--orange);
+        border-color: var(--orange);
+      }
+
+      .medium div:nth-child(-n+3){
+        background-color: var(--yellow);
+        border-color: var(--yellow);
+      }
+
+      .strong div:nth-child(-n+4){
+        background-color: var(--teal);
+        background-color: var(--red);
       }
 
       .submit-btn {
