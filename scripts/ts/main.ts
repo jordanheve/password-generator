@@ -1,6 +1,6 @@
 let password = document.querySelector('.password-txt') as HTMLSpanElement
 let form = document.querySelector('.generator-form')
-let copyButton =  document.querySelector('copy-btn')
+let copyButton =  document.querySelector('.copy-btn')
 let levelText = document.querySelector('.current-lvl')
 const checkBoxes = document.querySelectorAll<HTMLInputElement>('input[type=checkbox]');
 let range = document.querySelector('.range') as HTMLInputElement
@@ -61,7 +61,7 @@ const generatePassword = (e:Event):void => {
 }
 
 
-const updateTxt = (e:Event) => {
+const updateTxt = (e:Event):void => {
     let currentRangeValue: string = (e.target as HTMLInputElement).value;
     if (lenghtNumber) {
         lenghtNumber.innerHTML = currentRangeValue;
@@ -88,7 +88,11 @@ const calculateSecurityLevel = (length: number, checkedCount:number): string => 
     }
 };
 
+const copyEvent = () => {
+    navigator.clipboard.writeText(password.innerText)
+}
 
 
 form?.addEventListener('submit', generatePassword)
 range?.addEventListener('input', updateTxt)
+copyButton?.addEventListener('click', copyEvent)

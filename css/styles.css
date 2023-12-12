@@ -295,3 +295,18 @@ input[type="checkbox"] {
         background-color: var(--dark-gray);
         color: var(--zinc);
       }
+
+      .copy-alert {
+        color:var(--teal);
+        text-transform: uppercase;
+      }
+
+      .hidden {
+        display: none;
+      }
+
+      .copy {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+      }
