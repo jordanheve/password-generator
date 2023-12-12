@@ -247,36 +247,36 @@ input[type="checkbox"] {
 
 
      /*Bars lvl styles*/ 
-      .bars{
+      #bars{
         display: flex;
         gap: .3rem;
       }
 
-      .bars>div{
+      #bars>div{
         height: 1.55em;
         width: .55em;
         border: .05em var(--zinc) solid;
         background-color: transparent;
       }
 
-      .too-weak div:first-child {
+      #bars.too-weak div:first-child {
         background-color: var(--red);
         border-color: var(--red);
       }
 
-      .weak div:nth-child(-n+2) {
+      #bars.weak div:nth-child(-n+2) {
         background-color: var(--orange);
         border-color: var(--orange);
       }
 
-      .medium div:nth-child(-n+3){
+      #bars.medium div:nth-child(-n+3){
         background-color: var(--yellow);
         border-color: var(--yellow);
       }
 
-      .strong div:nth-child(-n+4){
+      #bars.strong div:nth-child(-n+4){
         background-color: var(--teal);
-        background-color: var(--red);
+        border-color: var(--teal);
       }
 
       .submit-btn {
