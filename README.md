@@ -21,7 +21,7 @@ Users should be able to:
 
 ### Links
 
-- Live Site URL: [live site URL here](http://127.0.0.1:5500/index.html)
+- Live Site URL: [live site URL here](https://jordanheve.github.io/password-generator/)
 
 ## My process
 
