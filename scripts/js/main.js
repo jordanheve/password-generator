@@ -44,7 +44,7 @@ const generatePassword = (e) => {
         chars += checkboxChars.symbols;
     }
     if (chars.length > 0 && password) {
-        for (let i = 0; i <= currentRangeValue; i++) {
+        for (let i = 1; i <= currentRangeValue; i++) {
             let randomNumber = Math.floor(Math.random() * chars.length);
             passwordGenerated += chars.substring(randomNumber, randomNumber + 1);
         }

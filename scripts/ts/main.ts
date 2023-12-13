@@ -32,7 +32,7 @@ const generatePassword = (e:Event):void => {
     let chars = ''
     let passwordGenerated = ''
     const checkedCount = Array.from(checkBoxes).filter(checkbox => checkbox.checked).length;
-    if(levelText &&   checkedCount > 0){
+    if(levelText &&  checkedCount > 0){
         levelText.innerHTML= calculateSecurityLevel(currentRangeValue, checkedCount )
     }
 
@@ -50,7 +50,7 @@ const generatePassword = (e:Event):void => {
     }
 
     if(chars.length > 0 && password) {
-        for(let i=0; i <= currentRangeValue ; i++) {
+        for(let i=1; i <= currentRangeValue ; i++) {
              let randomNumber = Math.floor(Math.random()* chars.length)
              passwordGenerated += chars.substring(randomNumber, randomNumber +1);
         }
