@@ -1,6 +1,7 @@
 let password = document.querySelector('.password-txt') as HTMLSpanElement
 let form = document.querySelector('.generator-form')
 let copyButton =  document.querySelector('.copy-btn')
+let copyAlert = document.querySelector('.copy-alert')
 let levelText = document.querySelector('.current-lvl')
 const checkBoxes = document.querySelectorAll<HTMLInputElement>('input[type=checkbox]');
 let range = document.querySelector('.range') as HTMLInputElement
@@ -60,7 +61,6 @@ const generatePassword = (e:Event):void => {
 
 }
 
-
 const updateTxt = (e:Event):void => {
     let currentRangeValue: string = (e.target as HTMLInputElement).value;
     if (lenghtNumber) {
@@ -90,9 +90,21 @@ const calculateSecurityLevel = (length: number, checkedCount:number): string => 
 
 const copyEvent = () => {
     navigator.clipboard.writeText(password.innerText)
-}
+        copyAlert?.classList.remove('hidden')
+    setTimeout(()=> {copyAlert?.classList.add('hidden')} , 1500)
+};
+
 
 
 form?.addEventListener('submit', generatePassword)
 range?.addEventListener('input', updateTxt)
 copyButton?.addEventListener('click', copyEvent)
+
+// change bg input color 
+
+range.addEventListener('input', function() {
+  const val = (parseInt(range.value) - parseInt(range.min)) / (parseInt(range.max) - parseInt(range.min));
+  const bgSize = `${val * 100}% 100%`;
+
+  range.style.setProperty('--bg-size', bgSize);
+});

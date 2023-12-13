@@ -2,7 +2,7 @@
 let password = document.querySelector('.password-txt');
 let form = document.querySelector('.generator-form');
 let copyButton = document.querySelector('.copy-btn');
-let copyAlert = document.querySelector('.copy-alert')
+let copyAlert = document.querySelector('.copy-alert');
 let levelText = document.querySelector('.current-lvl');
 const checkBoxes = document.querySelectorAll('input[type=checkbox]');
 let range = document.querySelector('.range');
@@ -60,19 +60,19 @@ const updateTxt = (e) => {
 };
 const calculateSecurityLevel = (length, checkedCount) => {
     if (length < 8 || checkedCount === 1) {
-        barsLvl.setAttribute('class', 'too-weak');
+        barsLvl === null || barsLvl === void 0 ? void 0 : barsLvl.setAttribute('class', 'too-weak');
         return 'Too Weak!';
     }
     else if (length < 13 && checkedCount < 3) {
-        barsLvl.setAttribute('class', 'weak');
+        barsLvl === null || barsLvl === void 0 ? void 0 : barsLvl.setAttribute('class', 'weak');
         return 'Weak';
     }
     else if (length < 16 && checkedCount <= 4) {
-        barsLvl.setAttribute('class', 'medium');
+        barsLvl === null || barsLvl === void 0 ? void 0 : barsLvl.setAttribute('class', 'medium');
         return 'Medium';
     }
-    else if (length >= 16 && checkedCount >= 3) {
-        barsLvl.setAttribute('class', 'strong');
+    else if (length >= 16 && checkedCount > 3) {
+        barsLvl === null || barsLvl === void 0 ? void 0 : barsLvl.setAttribute('class', 'strong');
         return 'Strong';
     }
     else {
@@ -81,9 +81,15 @@ const calculateSecurityLevel = (length, checkedCount) => {
 };
 const copyEvent = () => {
     navigator.clipboard.writeText(password.innerText);
-    copyAlert.classList.remove('hidden')
-    setTimeout(()=> {copyAlert.classList.add('hidden')} , 1500)
+    copyAlert === null || copyAlert === void 0 ? void 0 : copyAlert.classList.remove('hidden');
+    setTimeout(() => { copyAlert === null || copyAlert === void 0 ? void 0 : copyAlert.classList.add('hidden'); }, 1500);
 };
 form === null || form === void 0 ? void 0 : form.addEventListener('submit', generatePassword);
 range === null || range === void 0 ? void 0 : range.addEventListener('input', updateTxt);
 copyButton === null || copyButton === void 0 ? void 0 : copyButton.addEventListener('click', copyEvent);
+// change bg input color 
+range.addEventListener('input', function () {
+    const val = (parseInt(range.value) - parseInt(range.min)) / (parseInt(range.max) - parseInt(range.min));
+    const bgSize = `${val * 100}% 100%`;
+    range.style.setProperty('--bg-size', bgSize);
+});
